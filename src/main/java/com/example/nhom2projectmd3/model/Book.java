@@ -7,8 +7,8 @@ public class Book {
 
     private int id;
     private String name;
-    private List<Category> categoryList;
-    private Author author;
+    private String category;
+    private String author;
     private int price;
     private String image;
     private Date releaseDate;
@@ -17,10 +17,10 @@ public class Book {
     public Book() {
     }
 
-    public Book(int id, String name, List<Category> categoryList, Author author, int price, String image, Date releaseDate, String note) {
+    public Book(int id, String name, String category, String author, int price, String image, Date releaseDate, String note) {
         this.id = id;
         this.name = name;
-        this.categoryList = categoryList;
+        this.category = category;
         this.author = author;
         this.price = price;
         this.image = image;
@@ -44,19 +44,19 @@ public class Book {
         this.name = name;
     }
 
-    public List<Category> getCategoryList() {
-        return categoryList;
+    public String getCategory() {
+        return category;
     }
 
-    public void setCategoryList(List<Category> categoryList) {
-        this.categoryList = categoryList;
+    public void setCategory(String category) {
+        this.category = category;
     }
 
-    public Author getAuthor() {
+    public String getAuthor() {
         return author;
     }
 
-    public void setAuthor(Author author) {
+    public void setAuthor(String author) {
         this.author = author;
     }
 
