@@ -11,7 +11,7 @@ import java.util.List;
 public class BookDAO implements IBookDAO{
         private String jdbcURL = "jdbc:mysql://localhost:3306/md3case?useSSL=false";
         private String jdbcUsername = "root";
-        private String jdbcPassword = "Hello123";
+        private String jdbcPassword = "123456";
 
         private static final String INSERT_BOOKS_SQL = "INSERT INTO book (id, name, category, author, price, image, releaseDate, note) VALUES (?, ?, ?, ?, ?, ?, ?, ?);";
         private static final String SELECT_BOOK_BY_ID = "select id, name, category, author, price, image, releaseDate, note from book where id =?";
