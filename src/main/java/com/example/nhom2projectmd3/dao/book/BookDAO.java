@@ -11,7 +11,7 @@ import java.util.List;
 public class BookDAO implements IBookDAO{
         private String jdbcURL = "jdbc:mysql://localhost:3306/md3case?useSSL=false";
         private String jdbcUsername = "root";
-        private String jdbcPassword = "Daoloc93";
+        private String jdbcPassword = "Hello123";
 
         private static final String INSERT_BOOKS_SQL = "INSERT INTO book (id, name, category, author, price, image, releaseDate, note) VALUES (?, ?, ?, ?, ?, ?, ?, ?);";
         private static final String SELECT_BOOK_BY_ID = "select id, name, category, author, price, image, releaseDate, note from book where id =?";
@@ -48,11 +48,11 @@ public class BookDAO implements IBookDAO{
             preparedStatement.setString(1, Integer.toString(book.getId()) );
             preparedStatement.setString(2, book.getName());
             preparedStatement.setString(3, book.getCategory());
-            preparedStatement.setString(1, book.getAuthor());
-            preparedStatement.setString(2, Integer.toString(book.getPrice()));
-            preparedStatement.setString(3, book.getImage());
-            preparedStatement.setString(1, formatter.format(book.getReleaseDate()));
-            preparedStatement.setString(2, book.getNote());
+            preparedStatement.setString(4, book.getAuthor());
+            preparedStatement.setString(5, Integer.toString(book.getPrice()));
+            preparedStatement.setString(6, book.getImage());
+            preparedStatement.setString(7, formatter.format(book.getReleaseDate()));
+            preparedStatement.setString(8, book.getNote());
             System.out.println(preparedStatement);
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
@@ -140,7 +140,7 @@ public class BookDAO implements IBookDAO{
             statement.setInt(5, book.getPrice());
             statement.setString(6, book.getImage());
             statement.setString(7, formatter.format(book.getReleaseDate()));
-            statement.setString(4, book.getNote());
+            statement.setString(8, book.getNote());
 
             rowUpdated = statement.executeUpdate() > 0;
         }
